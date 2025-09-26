@@ -1,0 +1,20 @@
+[project]
+name = "mylandingpage"
+version = "0.0.1"
+description = "my landing page built in wagtail"
+authors = [
+    {name = "Jonathan",email = "150624002+marte2050@users.noreply.github.com"}
+]
+license = {text = "MIT"}
+requires-python = ">=3.13"
+dependencies = [
+    "wagtail (>=7.1.1,<8.0.0)",
+    "psycopg2-binary (>=2.9.10,<3.0.0)"
+]
+
+[tool.poetry]
+package-mode = false
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
