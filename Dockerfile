@@ -19,13 +19,11 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
 
 RUN ln -s /usr/bin/python3 /usr/bin/python
 RUN pipx install "gunicorn==20.0.4"
-RUN mkdir -p /app/.venv
 RUN chown -R ubuntu /app
 
 USER ubuntu
 RUN pipx install "poetry==2.2"
 RUN pipx ensurepath
-RUN ~/.local/bin/poetry config virtualenvs.in-project true
 RUN ~/.local/bin/poetry self add poetry-plugin-shell
 
 COPY src/pyproject.toml .
