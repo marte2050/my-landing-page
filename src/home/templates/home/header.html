@@ -3,6 +3,7 @@
 
 
 {% with header=page.header.first %}
+    {% if header %}
     <my-header>
         <my-navbar>        
         <my-navbarsection>
@@ -11,6 +12,7 @@
             </my-navbaritem>
         </my-navbarsection>
         {% with navsection=header.nav_section.first %}
+            {% if navsection %}
             {% if not navsection.hidden_mobile %}
             <my-navbarsection>
                 {% for nav_items in navsection.nav_items.all %}
@@ -32,7 +34,9 @@
                 {% endfor %}
             </my-navbarsection>
             {% endif %}
+            {% endif %}
         {% endwith %}
         </my-navbar>
     </my-header>
+    {% endif %}
 {% endwith %}
