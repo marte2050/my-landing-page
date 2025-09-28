@@ -1,3 +1,4 @@
+import sys
 from .base import *
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -11,6 +12,13 @@ ALLOWED_HOSTS = ["*"]
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
+TESTING = 'pytest' in sys.argv[0] or any('pytest' in arg for arg in sys.argv)
+
+if TESTING:
+    DATABASES["default"] = {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": ":memory:",
+    }
 
 try:
     from .local import *
