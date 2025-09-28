@@ -10,7 +10,7 @@ class NavBarSection(ClusterableModel):
 
     Attributes:
         hidden_mobile (bool): If True, the navigation section is hidden on mobile devices.
-        nav_items (list): A list of navigation items within the section.
+        header (Header): The header this navigation section belongs to.
         panels (list): Configuration for the Wagtail admin interface panels.
     """
 
