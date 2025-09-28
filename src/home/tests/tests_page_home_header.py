@@ -9,7 +9,7 @@ from home.models import (
 )
 
 
-class MyPageTest(WagtailPageTestCase):
+class PageHomeHeaderTest(WagtailPageTestCase):
     @classmethod
     def setUpTestData(cls):
         root = Page.get_first_root_node()
